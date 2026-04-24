@@ -1,0 +1,29 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import Register from './pages/Register';
+import './index.css';
+
+const LoginDummy = () => (
+  <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
+    <div className="text-center">
+      <h1 className="text-3xl font-extrabold text-slate-900 mb-4">Login Page</h1>
+      <p className="text-slate-500 mb-8">This is a placeholder for the login page.</p>
+      <a href="/" className="text-primary-600 font-bold hover:underline">Back to Home</a>
+    </div>
+  </div>
+);
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<LoginDummy />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
